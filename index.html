@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nick & Annie Wedding</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <style>  
+   
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: ivory;
+      color: #4b3b31;
+    }
+
+    nav {
+      position: fixed;
+      top: 22px;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 42px;
+    }
+
+    nav a {
+      color: #4b3b31;
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-page {
+      min-height: 100vh;
+      padding: 120px 25px 60px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: ivory;
+    }
+
+    .main-content {
+      max-width: 850px;
+    }
+
+    .main-content h1 {
+      font-family: "Pinyon Script", cursive;
+      font-size: 110px;
+      font-weight: normal;
+      margin: 0 0 20px;
+      line-height: 0.9;
+      .and-text {
+         display: inline-block;
+         font-size: 60px;
+         transform: translateY(-20px);
+      }
+    }
+
+    .main-content h2 {
+      font-size: 30px;
+      font-weight: normal;
+      margin: 0 0 35px;
+    }
+
+    .main-content p {
+      font-size: 21px;
+      line-height: 1.7;
+      margin: 14px 0;
+    }
+
+    .main-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .main-buttons button {
+      border: none;
+      color: #4b3b31;
+      padding: 12px 24px;
+      border-radius: 0;
+      font-size: 18px;
+      background: transparent;
+      cursor: pointer;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 1px;
+    }
+
+    .main-buttons button:hover {
+      text-decoration: underline;
+      background: transparent;
+      color: #f8efe5;
+    }
+
+    .screens {
+      display: none;
+      padding-bottom: 40px;
+      background: #f8efe5;
+    }
+
+    .screens.show {
+      display: block;
+    }
+
+    .page {
+      display: none;
+      position: relative;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    #welcome.active {
+      display: flex;
+    }
+
+    #welcome {
+      background: ivory;
+     display: none;
+     align-items: center;
+     justify-content: center;
+     padding: 60px 20px 20px;
+     box-sizing: border-box;
+    }
+
+    #venue {
+      background-image: url("https://nickandannie-wedding.s3.us-east-1.amazonaws.com/venue.png");
+    }
+
+    #dress {
+      background-image: url("https://nickandannie-wedding.s3.us-east-1.amazonaws.com/dress-code.png");
+    }
+
+    #registry {
+      background-image: url("https://nickandannie-wedding.s3.us-east-1.amazonaws.com/registry.png");
+    }
+ 
+    .welcome-message {
+      display: none;
+      background: ivory;
+      color: #4b3b31;
+      text-align: center;
+      padding: 35px 25px 55px;
+    }
+
+    .welcome-image {
+      max-width: 850px;
+      width: 90%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .welcome-message p {
+      max-width: 850px;
+      font-family: "Pinyon Script", cursive;
+      margin: 0 auto;
+      font-size: 65px;
+      line-height: 2.0;
+    }
+
+    .venue-link {
+      position: absolute;
+      left: 21%;
+      top: 65%;
+      width: 24%;
+      height: 11%;
+      display: block;
+      z-index: 20;
+    }
+
+    .registry-link {
+      position: absolute;
+      left: 64%;
+      top: 65%;
+      width: 25%;
+      height: 10%;
+      display: block;
+      z-index: 20;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        top: 0;
+        background: #fbf8ee;
+        padding: 10px 0;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .main-page {
+        padding-top: 95px;
+      }
+
+      .main-content h1 {
+        font-size: 44px;
+      }
+
+      .main-content h2 {
+        font-size: 24px;
+      }
+
+      .main-content p {
+        font-size: 18px;
+      }
+
+      .page {
+        min-height: 0;
+        height: 75vw;
+        background-size: contain;
+        background-position: center top;
+        background-color: #fbf8ee;
+      }
+
+      .venue-link {
+        left: 20%;
+        top: 45%;
+        width: 28%;
+        height: 14%;
+      }
+
+      .registry-link {
+        left: 62%;
+        top: 55%;
+        width: 30%;
+        height: 13%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="main-page">
+    <div class="main-content">
+      <h1>
+	  Nick<br>
+          <span class="and-text">and</span><br>
+          Annie
+      </h1>
+      
+      <div class="main-buttons">
+        <button onclick="showScreen('welcome')">Welcome</button>
+        <button onclick="showScreen('venue')">Venue</button>
+        <button onclick="showScreen('dress')">Dress Code</button>
+        <button onclick="showScreen('registry')">Registry</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="screens" class="screens">
+
+    <section id="welcome" class="page welcome-page">
+      <img
+        class="welcome-image"
+        src="https://nickandannie-wedding.s3.us-east-1.amazonaws.com/welcome.png?v=3"
+        alt="Nick and Annie Welcome"
+      />
+    </section>
+    
+    <div id="welcome-message" class="welcome-message">
+      <p>
+        please join us for our wedding celebration on
+      </p>
+      <p>
+        December 31st, 2026
+      </p>
+    </div> 
+
+    <section id="venue" class="page">
+      <a
+        class="venue-link"
+        href="https://howefarmstn.com/rustic-wedding-venue/"
+        target="_blank"
+        aria-label="The Venue"
+      ></a>
+    </section>
+
+    <section id="dress" class="page"></section>
+
+    <section id="registry" class="page">
+      <a
+        class="registry-link"
+        href="https://www.amazon.com/wedding/guest-view/1NTPMOMTWMYZ4"
+        target="_blank"
+        aria-label="Click me for Registry"
+      ></a>
+    </section>
+  </div>
+
+  <script>
+   function showScreen(screenId) {
+     const screensContainer = document.getElementById("screens");
+     const pages = document.querySelectorAll(".page");
+     const welcomeMessage = document.getElementById("welcome-message");
+
+     pages.forEach(page => {
+       page.classList.remove("active");
+     });
+
+     document.getElementById(screenId).classList.add("active");
+     screensContainer.classList.add("show");
+
+     if (screenId === "welcome") {
+       welcomeMessage.style.display = "block";
+     } else {
+       welcomeMessage.style.display = "none";
+     }
+
+     screensContainer.scrollIntoView({ behavior: "smooth" });
+   }
+  </script>
+</body>
+</html>
