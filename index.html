@@ -41,8 +41,8 @@
     }
 
     .main-page {
-      min-height: 100vh;
-      padding: 120px 25px 60px;
+      min-height: 75vh;
+      padding: 60px 25px 30px;
       box-sizing: border-box;
       display: flex;
       align-items: center;
@@ -81,7 +81,7 @@
     }
 
     .main-buttons {
-      margin-top: 35px;
+      margin-top: 15px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -138,12 +138,12 @@
      display: none;
      align-items: center;
      justify-content: center;
-     padding: 60px 20px 20px;
+     padding: 30px 20px 5px;
      box-sizing: border-box;
     }
 
     #venue {
-      background-image: url("https://nickandannie-wedding.s3.us-east-1.amazonaws.com/venue.png");
+      background-image: url("https://nickandannie-wedding.s3.us-east-1.amazonaws.com/venue.png?v=3");
     }
 
     #dress {
@@ -159,7 +159,7 @@
       background: ivory;
       color: #4b3b31;
       text-align: center;
-      padding: 35px 25px 55px;
+      padding: 5px 25px 35px;
     }
 
     .welcome-image {
@@ -174,14 +174,23 @@
       max-width: 850px;
       font-family: "Pinyon Script", cursive;
       margin: 0 auto;
-      font-size: 65px;
+      font-size: 45px;
+      line-height: 2.0;
+    }
+
+    .wedding-date {
+      display: block;
+      max-width: 850px;
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0 auto;
+      font-size: 45px;
       line-height: 2.0;
     }
 
     .venue-link {
       position: absolute;
-      left: 21%;
-      top: 65%;
+      left: 17%;
+      top: 55%;
       width: 24%;
       height: 11%;
       display: block;
@@ -286,9 +295,9 @@
       <p>
         please join us for our wedding celebration on
       </p>
-      <p>
+      <span class="wedding-date">
         December 31st, 2026
-      </p>
+      </span>
     </div> 
 
     <section id="venue" class="page">
