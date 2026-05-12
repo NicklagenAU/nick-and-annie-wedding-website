@@ -2,6 +2,10 @@
 
 This is a personal wedding website for my Fiance and I. The site includes a custom landing page with interactive sections for the welcome message, venue information, dress code, travel accomadations, and registry.
 
+## Website
+
+go to www.nicholasandannie.com
+
 ## Features
 
 - Custom HTML, CSS, and JavaScript website
